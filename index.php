@@ -14,8 +14,8 @@
     <meta property="og:url" content="http://pumiwebcoder.xsrv.jp/" />
     <meta property="og:title" content="みなみ歯科クリニック" />
     <meta property="og:description" content="みなみ歯科クリニックです。街の皆さまの笑顔を守るアットホームな歯医者さんです。" />
-    <meta property="og:image" content="./img/favicon.webp" />
-    <link rel="icon" href="./img/favicon.webp" type="image/png" />
+    <meta property="og:image" content="<?php echo get_template_directory_uri() ?>/img/favicon.webp" />
+    <link rel="icon" href="<?php echo get_template_directory_uri() ?>/img/favicon.webp" type="image/png" />
     <!-- GoogleFonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
@@ -47,7 +47,7 @@
       <div class="header__inner">
         <h1 class="header__logo">
           <a href="./index.php">
-            <img loading="lazy" decoding="async" src="./img/logo.webp" alt="みなみ歯科クリニック" width="808" height="82" />
+            <img loading="lazy" decoding="async" src="<?php echo get_template_directory_uri() ?>/img/logo.webp" alt="みなみ歯科クリニック" width="808" height="82" />
           </a>
         </h1>
         <div class="header__nav--contents">
@@ -215,27 +215,27 @@
               <li class="swiper-slide mv__slider">
                 <div class="mv__slider--img">
                   <picture>
-                    <source media="(max-width: 1023px)" srcset="./img/top-01-sp.webp" />
-                    <source media="not (max-width: 1023px)" srcset="./img/top-01.webp" />
-                    <img loading="lazy" decoding="async" src="./img/top-01-sp.webp" alt="治療席画像（斜め後ろ）" width="335" height="447" />
+                    <source media="(max-width: 1023px)" srcset="<?php echo get_template_directory_uri() ?>/img/top-01-sp.webp" />
+                    <source media="not (max-width: 1023px)" srcset="<?php echo get_template_directory_uri() ?>/img/top-01.webp" />
+                    <img loading="lazy" decoding="async" src="<?php echo get_template_directory_uri() ?>/img/top-01-sp.webp" alt="治療席画像（斜め後ろ）" width="335" height="447" />
                   </picture>
                 </div>
               </li>
               <li class="swiper-slide mv__slider">
                 <div class="mv__slider--img">
                   <picture>
-                    <source media="(max-width: 1023px)" srcset="./img/top-02-sp.webp" />
-                    <source media="not (max-width: 1023px)" srcset="./img/top-02.webp" />
-                    <img loading="lazy" decoding="async" src="./img/top-02-sp.webp" alt="治療席画像（後ろ）" width="335" height="447" />
+                    <source media="(max-width: 1023px)" srcset="<?php echo get_template_directory_uri() ?>/img/top-02-sp.webp" />
+                    <source media="not (max-width: 1023px)" srcset="<?php echo get_template_directory_uri() ?>/img/top-02.webp" />
+                    <img loading="lazy" decoding="async" src="<?php echo get_template_directory_uri() ?>/img/top-02-sp.webp" alt="治療席画像（後ろ）" width="335" height="447" />
                   </picture>
                 </div>
               </li>
               <li class="swiper-slide mv__slider">
                 <div class="mv__slider--img">
                   <picture>
-                    <source media="(max-width: 1023px)" srcset="./img/top-03-sp.webp" />
-                    <source media="not (max-width: 1023px)" srcset="./img/top-03.webp" />
-                    <img loading="lazy" decoding="async" src="./img/top-03-sp.webp" alt="治療席画像（横）" width="335" height="447" />
+                    <source media="(max-width: 1023px)" srcset="<?php echo get_template_directory_uri() ?>/img/top-03-sp.webp" />
+                    <source media="not (max-width: 1023px)" srcset="<?php echo get_template_directory_uri() ?>/img/top-03.webp" />
+                    <img loading="lazy" decoding="async" src="<?php echo get_template_directory_uri() ?>/img/top-03-sp.webp" alt="治療席画像（横）" width="335" height="447" />
                   </picture>
                 </div>
               </li>
@@ -250,7 +250,7 @@
             <img
               loading="lazy"
               decoding="async"
-              src="./img/time-schedule.webp"
+              src="<?php echo get_template_directory_uri() ?>/img/time-schedule.webp"
               alt="水曜日午後は休診日となります。土日祝日含め午前の診療時間は9:00〜12:00、午後の診療時間は13:00〜22:00となります。"
               width="477"
               height="166"
@@ -297,7 +297,7 @@
           </div>
         </div>
         <div class="concept__img">
-          <img loading="lazy" decoding="async" src="./img/concept-img.webp" alt="女医の丁寧な治療" width="668" height="460" />
+          <img loading="lazy" decoding="async" src="<?php echo get_template_directory_uri() ?>/img/concept-img.webp" alt="女医の丁寧な治療" width="668" height="460" />
         </div>
       </div>
       <!-- </div> -->
@@ -310,23 +310,23 @@
         <div class="recommend__wrapper">
           <div class="recommend__item">
             <div class="recommend__label">
-              <img loading="lazy" decoding="async" src="./img/recommend-label-1.webp" alt="おすすめ01" width="177" height="33" />
+              <img loading="lazy" decoding="async" src="<?php echo get_template_directory_uri() ?>/img/recommend-label-1.webp" alt="おすすめ01" width="177" height="33" />
             </div>
             <div class="recommend__img">
-              <img loading="lazy" decoding="async" src="./img/recommend-img-1.webp" alt="歯の画像" width="220" height="220" />
+              <img loading="lazy" decoding="async" src="<?php echo get_template_directory_uri() ?>/img/recommend-img-1.webp" alt="歯の画像" width="220" height="220" />
             </div>
             <div class="recommend__message">痛くない歯科医療の追求</div>
             <div class="recommend__text">歯の治療において、小さな違和感は大きなストレスにつながります。 <br />私たちは常に快適な歯科医療技術の研究を行っております。</div>
           </div>
           <div class="recommend__item">
-            <div class="recommend__label"><img loading="lazy" decoding="async" src="./img/recommend-label-2.webp" alt="おすすめ02" width="182" height="33" /></div>
-            <div class="recommend__img"><img loading="lazy" decoding="async" src="./img/recommend-img-2.webp" alt="電車画像" width="220" height="220" /></div>
+            <div class="recommend__label"><img loading="lazy" decoding="async" src="<?php echo get_template_directory_uri() ?>/img/recommend-label-2.webp" alt="おすすめ02" width="182" height="33" /></div>
+            <div class="recommend__img"><img loading="lazy" decoding="async" src="<?php echo get_template_directory_uri() ?>/img/recommend-img-2.webp" alt="電車画像" width="220" height="220" /></div>
             <div class="recommend__message">駅から徒歩3分</div>
             <div class="recommend__text">「通いやすさ」も医院選びの重要なポイントと考え、2019年のリニューアルを期に更に駅の近くへ場所を移しました。</div>
           </div>
           <div class="recommend__item">
-            <div class="recommend__label"><img loading="lazy" decoding="async" src="./img/recommend-label-3.webp" alt="おすすめ03" width="182" height="33" /></div>
-            <div class="recommend__img"><img loading="lazy" decoding="async" src="./img/recommend-img-3.webp" alt="時計画像" width="220" height="220" /></div>
+            <div class="recommend__label"><img loading="lazy" decoding="async" src="<?php echo get_template_directory_uri() ?>/img/recommend-label-3.webp" alt="おすすめ03" width="182" height="33" /></div>
+            <div class="recommend__img"><img loading="lazy" decoding="async" src="<?php echo get_template_directory_uri() ?>/img/recommend-img-3.webp" alt="時計画像" width="220" height="220" /></div>
             <div class="recommend__message">夜20:30まで営業</div>
             <div class="recommend__text">
               朝から夜までお仕事をされている方のために、診療時間を見直しました。<br />
@@ -345,14 +345,14 @@
           <div class="medical__inner">
             <div class="medical__wrapper">
               <a href="./medical.html#general-practice" class="medical__item">
-                <div class="medical__img"><img loading="lazy" decoding="async" src="./img/medical-img-1.webp" alt="歯ブラシ" width="460" height="290" /></div>
+                <div class="medical__img"><img loading="lazy" decoding="async" src="<?php echo get_template_directory_uri() ?>/img/medical-img-1.webp" alt="歯ブラシ" width="460" height="290" /></div>
                 <div class="medical__text">
                   <h3 class="medical__text--title">一般診療</h3>
                   <div class="medical__text--text">虫歯・入れ歯・小児歯科</div>
                 </div>
               </a>
               <a href="./medical.html#special-practice" class="medical__item">
-                <div class="medical__img"><img loading="lazy" decoding="async" src="./img/medical-img-2.webp" alt="歯茎" width="460" height="290" /></div>
+                <div class="medical__img"><img loading="lazy" decoding="async" src="<?php echo get_template_directory_uri() ?>/img/medical-img-2.webp" alt="歯茎" width="460" height="290" /></div>
                 <div class="medical__text">
                   <h3 class="medical__text--title">特殊診療</h3>
                   <div class="medical__text--text">
@@ -382,9 +382,9 @@
               <a href="./page-name.html" class="blog__link">
                 <div class="blog__img">
                   <picture>
-                    <source media="(max-width: 767px)" srcset="./img/blog-img-sp.webp" />
-                    <source media="not (max-width: 767px)" srcset="./img/blog-img.webp" />
-                    <img loading="lazy" decoding="async" src="./img/blog-img-sp.webp" alt="レントゲンを見て診察" width="335" height="447" />
+                    <source media="(max-width: 767px)" srcset="<?php echo get_template_directory_uri() ?>/img/blog-img-sp.webp" />
+                    <source media="not (max-width: 767px)" srcset="<?php echo get_template_directory_uri() ?>/img/blog-img.webp" />
+                    <img loading="lazy" decoding="async" src="<?php echo get_template_directory_uri() ?>/img/blog-img-sp.webp" alt="レントゲンを見て診察" width="335" height="447" />
                   </picture>
                 </div>
                 <div class="blog__text is-other">
@@ -397,9 +397,9 @@
               <a href="./page-name.html" class="blog__link is-new">
                 <div class="blog__img">
                   <picture>
-                    <source media="(max-width: 767px)" srcset="./img/blog-img-sp.webp" />
-                    <source media="not (max-width: 767px)" srcset="./img/blog-img.webp" />
-                    <img loading="lazy" decoding="async" src="./img/blog-img-sp.webp" alt="レントゲンを見て診察" width="335" height="447" />
+                    <source media="(max-width: 767px)" srcset="<?php echo get_template_directory_uri() ?>/img/blog-img-sp.webp" />
+                    <source media="not (max-width: 767px)" srcset="<?php echo get_template_directory_uri() ?>/img/blog-img.webp" />
+                    <img loading="lazy" decoding="async" src="<?php echo get_template_directory_uri() ?>/img/blog-img-sp.webp" alt="レントゲンを見て診察" width="335" height="447" />
                   </picture>
                 </div>
                 <div class="blog__text is-other">
@@ -412,9 +412,9 @@
               <a href="./page-name.html" class="blog__link is-new">
                 <div class="blog__img">
                   <picture>
-                    <source media="(max-width: 767px)" srcset="./img/blog-img-sp.webp" />
-                    <source media="not (max-width: 767px)" srcset="./img/blog-img.webp" />
-                    <img loading="lazy" decoding="async" src="./img/blog-img-sp.webp" alt="レントゲンを見て診察" width="335" height="447" />
+                    <source media="(max-width: 767px)" srcset="<?php echo get_template_directory_uri() ?>/img/blog-img-sp.webp" />
+                    <source media="not (max-width: 767px)" srcset="<?php echo get_template_directory_uri() ?>/img/blog-img.webp" />
+                    <img loading="lazy" decoding="async" src="<?php echo get_template_directory_uri() ?>/img/blog-img-sp.webp" alt="レントゲンを見て診察" width="335" height="447" />
                   </picture>
                 </div>
                 <div class="blog__text is-other">
@@ -427,9 +427,9 @@
               <a href="./page-name.html" class="blog__link is-new">
                 <div class="blog__img">
                   <picture>
-                    <source media="(max-width: 767px)" srcset="./img/blog-img-sp.webp" />
-                    <source media="not (max-width: 767px)" srcset="./img/blog-img.webp" />
-                    <img loading="lazy" decoding="async" src="./img/blog-img-sp.webp" alt="レントゲンを見て診察" width="335" height="447" />
+                    <source media="(max-width: 767px)" srcset="<?php echo get_template_directory_uri() ?>/img/blog-img-sp.webp" />
+                    <source media="not (max-width: 767px)" srcset="<?php echo get_template_directory_uri() ?>/img/blog-img.webp" />
+                    <img loading="lazy" decoding="async" src="<?php echo get_template_directory_uri() ?>/img/blog-img-sp.webp" alt="レントゲンを見て診察" width="335" height="447" />
                   </picture>
                 </div>
                 <div class="blog__text is-other">
@@ -442,9 +442,9 @@
               <a href="./page-name.html" class="blog__link is-new">
                 <div class="blog__img">
                   <picture>
-                    <source media="(max-width: 767px)" srcset="./img/blog-img-sp.webp" />
-                    <source media="not (max-width: 767px)" srcset="./img/blog-img.webp" />
-                    <img loading="lazy" decoding="async" src="./img/blog-img-sp.webp" alt="レントゲンを見て診察" width="335" height="447" />
+                    <source media="(max-width: 767px)" srcset="<?php echo get_template_directory_uri() ?>/img/blog-img-sp.webp" />
+                    <source media="not (max-width: 767px)" srcset="<?php echo get_template_directory_uri() ?>/img/blog-img.webp" />
+                    <img loading="lazy" decoding="async" src="<?php echo get_template_directory_uri() ?>/img/blog-img-sp.webp" alt="レントゲンを見て診察" width="335" height="447" />
                   </picture>
                 </div>
                 <div class="blog__text is-other">
@@ -457,9 +457,9 @@
               <a href="./page-name.html" class="blog__link is-new">
                 <div class="blog__img">
                   <picture>
-                    <source media="(max-width: 767px)" srcset="./img/blog-img-sp.webp" />
-                    <source media="not (max-width: 767px)" srcset="./img/blog-img.webp" />
-                    <img loading="lazy" decoding="async" src="./img/blog-img-sp.webp" alt="レントゲンを見て診察" width="335" height="447" />
+                    <source media="(max-width: 767px)" srcset="<?php echo get_template_directory_uri() ?>/img/blog-img-sp.webp" />
+                    <source media="not (max-width: 767px)" srcset="<?php echo get_template_directory_uri() ?>/img/blog-img.webp" />
+                    <img loading="lazy" decoding="async" src="<?php echo get_template_directory_uri() ?>/img/blog-img-sp.webp" alt="レントゲンを見て診察" width="335" height="447" />
                   </picture>
                 </div>
                 <div class="blog__text is-other">
@@ -483,7 +483,7 @@
           <div class="footer__info">
             <div class="footer__logo">
               <a href="./index.php">
-                <img loading="lazy" decoding="async" src="./img/logo.webp" alt="みなみ歯科クリニック" width="808" height="82" />
+                <img loading="lazy" decoding="async" src="<?php echo get_template_directory_uri() ?>/img/logo.webp" alt="みなみ歯科クリニック" width="808" height="82" />
               </a>
             </div>
             <div class="footer__info--address">
@@ -541,7 +541,7 @@
               <img
                 loading="lazy"
                 decoding="async"
-                src="./img/time-schedule.webp"
+                src="<?php echo get_template_directory_uri() ?>/img/time-schedule.webp"
                 alt="水曜日午後は休診日となります。土日祝日含め午前の診療時間は9:00〜12:00、午後の診療時間は13:00〜22:00となります。"
                 width="477"
                 height="166"
@@ -649,7 +649,7 @@
       <!-- totop -->
       <div class="footer__pagetop">
         <a href="#" aria-label="Go to top">
-          <img loading="lazy" decoding="async" src="./img/totop.webp" alt="topへ戻るボタン" width="56" height="56" />
+          <img loading="lazy" decoding="async" src="<?php echo get_template_directory_uri() ?>/img/totop.webp" alt="topへ戻るボタン" width="56" height="56" />
         </a>
       </div>
     </footer>
