@@ -1,6 +1,6 @@
-/* 
+/*
 Theme Name: pumi_graduation-work
- */
+*/
 
 @charset "UTF-8";
 :root {
@@ -733,7 +733,7 @@ body {
     left: 0;
     width: 28px;
     height: 28px;
-    background: url(../img/phone.webp) no-repeat center/cover;
+    background: url(./img/phone.webp) no-repeat center/cover;
   }
   .header__nav {
     padding-inline: 20px;
@@ -907,7 +907,7 @@ body {
     width: 100%;
     height: 1px;
     left: 0;
-    background: url(../img/drawer-line.svg) no-repeat center;
+    background: url(./img/drawer-line.svg) no-repeat center;
   }
   .drawer__nav--item:last-child::after {
     content: "";
@@ -916,7 +916,7 @@ body {
     width: 100%;
     height: 1px;
     left: 0;
-    background: url(../img/drawer-line.svg) no-repeat center;
+    background: url(./img/drawer-line.svg) no-repeat center;
   }
   .drawer__nav--link {
     padding-top: 16px;
@@ -952,7 +952,7 @@ body {
     height: 14px;
     display: inline-block;
     margin-left: auto;
-    background: url(../img/icon-arrow-right.svg) no-repeat center right;
+    background: url(./img/icon-arrow-right.svg) no-repeat center right;
   }
 }
 .section__inner {
@@ -989,7 +989,7 @@ body {
   transform: translateY(-50%);
   width: 67px;
   height: 20px;
-  background: url(../img/section-bar.svg);
+  background: url(./img/section-bar.svg);
 }
 .section__title::before {
   left: 0;
@@ -1008,7 +1008,7 @@ body {
   .section__title::after {
     width: 49px;
     height: 13px;
-    background: url(../img/section-bar-sp.svg);
+    background: url(./img/section-bar-sp.svg);
   }
 }
 
@@ -1030,11 +1030,11 @@ body {
   left: 0;
   width: 100%;
   height: 32px;
-  background: repeat-x url("../img/footer-wave.svg") left bottom;
+  background: repeat-x url("./img/footer-wave.svg") left bottom;
 }
 @media (width <= 767px) {
   .footer::before {
-    background: repeat-x url("../img/footer-wave.svg") left 20px bottom;
+    background: repeat-x url("./img/footer-wave.svg") left 20px bottom;
   }
 }
 
@@ -1153,7 +1153,7 @@ body {
   left: 0;
   width: 28px;
   height: 28px;
-  background: url(../img/phone.webp) no-repeat center/cover;
+  background: url(./img/phone.webp) no-repeat center/cover;
 }
 .footer__nav .footer__info--tel-number::before {
   width: 18px;
@@ -1516,7 +1516,7 @@ body {
 
 .swiper-button-prev::after {
   left: 22px;
-  background: url("../img/arrow-left-swiper.webp") no-repeat center center/cover;
+  background: url("./img/arrow-left-swiper.webp") no-repeat center center/cover;
 }
 @media (width <= 767px) {
   .swiper-button-prev::after {
@@ -1526,7 +1526,7 @@ body {
 
 .swiper-button-next::after {
   right: 18px;
-  background: url("../img/arrow-right-swiper.webp") no-repeat center center/cover;
+  background: url("./img/arrow-right-swiper.webp") no-repeat center center/cover;
 }
 @media (width <= 767px) {
   .swiper-button-next::after {
@@ -2481,6 +2481,7 @@ body {
   gap: 60px 50px;
   -ms-flex-wrap: wrap;
   flex-wrap: wrap;
+  align-items: stretch;
 }
 @media (width <= 767px) {
   .blog__list {
@@ -2493,11 +2494,12 @@ body {
 }
 
 .blog__item {
+  width: calc((100% - 20px * 2) / 3 - 1px);
   max-width: 300px;
   position: relative;
 }
-.blog__item.is-new::before {
-  content: "NEW";
+.blog__item-tag {
+  content: "";
   position: absolute;
   top: -20px;
   left: -10px;
@@ -2605,8 +2607,8 @@ body {
     padding: 30px 10px 8px;
   }
 }
-.blog__text.is-other::before {
-  content: "その他";
+.blog__category {
+  content: "";
   position: absolute;
   top: -14px;
   left: 24px;
@@ -2635,6 +2637,7 @@ body {
   line-height: 1.5;
   -webkit-transition: all 0.3s ease;
   transition: all 0.3s ease;
+  aspect-ratio: 252/120;
 }
 @media (width <= 767px) {
   .blog__title {
@@ -3041,7 +3044,7 @@ input[type="checkbox"] + label::after {
 }
 
 select {
-  background: #f6f6f6 url(../img/select-arrow.svg) no-repeat right 12px center;
+  background: #f6f6f6 url(./img/select-arrow.svg) no-repeat right 12px center;
 }
 @media (width <= 767px) {
   select {
@@ -3051,7 +3054,7 @@ select {
 
 input[type="date"] {
   padding: 14px 16px;
-  background: #f6f6f6 url(../img/icon-calender.svg) no-repeat right 12px center;
+  background: #f6f6f6 url(./img/icon-calender.svg) no-repeat right 12px center;
   position: relative;
 }
 input[type="date"]::-webkit-calendar-picker-indicator {

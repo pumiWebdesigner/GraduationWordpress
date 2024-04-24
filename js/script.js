@@ -86,4 +86,7 @@
       jQuery("body").removeClass("is-scroll");
     }
   });
+
+  // wow.js実行後にwow起動
+  new WOW().init();
 }

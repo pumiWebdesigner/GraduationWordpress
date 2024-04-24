@@ -14,8 +14,8 @@
     <meta property="og:url" content="http://pumiwebcoder.xsrv.jp/" />
     <meta property="og:title" content="みなみ歯科クリニック" />
     <meta property="og:description" content="みなみ歯科クリニックです。街の皆さまの笑顔を守るアットホームな歯医者さんです。" />
-    <meta property="og:image" content="./img/favicon.webp" />
-    <link rel="icon" href="./img/favicon.webp" type="image/webp" />
+    <meta property="og:image" content="<?php echo get_template_directory_uri() ?>/img/favicon.webp" />
+    <link rel="icon" href="<?php echo get_template_directory_uri() ?>/img/favicon.webp" type="image/png" />
     <!-- GoogleFonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
@@ -35,18 +35,19 @@
       new WOW().init();
     </script>
     <!-- css読み込み -->
-    <link rel="stylesheet" href="./css/medical.css" />
+    <link rel="stylesheet" href="./style.css" />
     <!-- JavaScript読み込み -->
     <script src="./js/contact.js" defer></script>
-    <!-- <script src="./js/script.js" defer></script> -->
+    <script src="./js/script.js" defer></script>
   </head>
 
   <body>
+    <!-- header -->
     <header class="header">
       <div class="header__inner">
         <h1 class="header__logo">
           <a href="./index.php">
-            <img loading="lazy" decoding="async" src="./img/logo.webp" alt="みなみ歯科クリニック" width="808" height="82" />
+            <img loading="lazy" decoding="async" src="<?php echo get_template_directory_uri() ?>/img/logo.webp" alt="みなみ歯科クリニック" width="808" height="82" />
           </a>
         </h1>
         <div class="header__nav--contents">
@@ -58,7 +59,7 @@
           <nav class="header__nav drawer__nav">
             <ul class="header__nav--list drawer__nav--list">
               <!-- home -->
-              <li class="header__nav--item drawer__nav--item">
+              <li class="header__nav--item drawer__nav--item is-active">
                 <a href="./index.php" class="header__nav--link drawer__nav--link js-drawer__nav--link">
                   <div class="header__nav--icon drawer__nav--icon">
                     <svg width="19" height="20" viewBox="0 0 19 20" fill="none">
@@ -90,7 +91,7 @@
                 </a>
               </li>
               <!-- medical -->
-              <li class="header__nav--item drawer__nav--item is-active">
+              <li class="header__nav--item drawer__nav--item">
                 <a href="./medical.html" class="header__nav--link drawer__nav--link js-drawer__nav--link">
                   <div class="header__nav--icon drawer__nav--icon">
                     <svg width="24" height="24" viewBox="0 0 24 24" fill="none">
@@ -179,13 +180,14 @@
           <div class="header__access">
             <div class="header__access--address">〒166-0001 東京都杉並区阿佐谷北7-3-1</div>
             <div class="header__access--tel">
-              <a href="tel:03-1234-5678" class="header__access--tel-number">03-1234-5678</a>
+              <div class="header__access--tel-number">03-1234-5678</div>
             </div>
           </div>
         </div>
       </div>
     </header>
 
+    <!-- 画面横のWEB予約ボタン -->
     <a href="./reservation.html" class="aside__button">
       <div class="aside__button--label">
         <div class="button--icon">
@@ -204,262 +206,284 @@
       </div>
     </a>
 
-    <div class="page-title">
-      <div class="page-title__img">
-        <picture>
-          <source srcset="./img/page-medical_top-sp.webp" media="(max-width: 767px)" type="image/webp" />
-          <img src="./img/page-medical_top.webp" alt="診療室の画像" width="1160" height="340" />
-        </picture>
-      </div>
-      <div class="page-title__text">
-        <div class="page-title__text--main">診療案内</div>
-        <div class="page-title__text--sub">MEDICAL</div>
-      </div>
-    </div>
-
-    <div class="bread-crumb">
-      <a href="./index.php" class="bread-cumb__link--home">ホーム</a>
-      <div class="bread-cumb__link--second">診療案内</div>
-    </div>
-
-    <div class="practice-nav wow fadeInUp">
-      <div class="practice-nav__inner">
-        <div class="practice-nav--items">
-          <div class="practice-nav--item">
-            <a href="#general-practice" class="practice-nav__title">
-              <h2 class="practice-nav__title--text">一般診療</h2>
-              <div class="practice-nav__title--label general--label">保険対象</div>
-            </a>
-            <div class="practice-nav__menu">
-              <a href="#general-dental" class="practice-nav__menu--item">一般歯科</a>
-              <a href="#children-dental" class="practice-nav__menu--item">小児歯科</a>
-              <a href="#preventive-dental" class="practice-nav__menu--item">予防歯科</a>
-            </div>
+    <!-- main visual -->
+    <div class="mv wow fadeInUp">
+      <div class="mv__inner">
+        <div class="mv__swiper--container">
+          <div class="swiper mv__swiper js-mv-swiper">
+            <ul class="swiper-wrapper">
+              <li class="swiper-slide mv__slider">
+                <div class="mv__slider--img">
+                  <picture>
+                    <source media="(max-width: 1023px)" srcset="<?php echo get_template_directory_uri() ?>/img/top-01-sp.webp" />
+                    <source media="not (max-width: 1023px)" srcset="<?php echo get_template_directory_uri() ?>/img/top-01.webp" />
+                    <img loading="lazy" decoding="async" src="<?php echo get_template_directory_uri() ?>/img/top-01-sp.webp" alt="治療席画像（斜め後ろ）" width="335" height="447" />
+                  </picture>
+                </div>
+              </li>
+              <li class="swiper-slide mv__slider">
+                <div class="mv__slider--img">
+                  <picture>
+                    <source media="(max-width: 1023px)" srcset="<?php echo get_template_directory_uri() ?>/img/top-02-sp.webp" />
+                    <source media="not (max-width: 1023px)" srcset="<?php echo get_template_directory_uri() ?>/img/top-02.webp" />
+                    <img loading="lazy" decoding="async" src="<?php echo get_template_directory_uri() ?>/img/top-02-sp.webp" alt="治療席画像（後ろ）" width="335" height="447" />
+                  </picture>
+                </div>
+              </li>
+              <li class="swiper-slide mv__slider">
+                <div class="mv__slider--img">
+                  <picture>
+                    <source media="(max-width: 1023px)" srcset="<?php echo get_template_directory_uri() ?>/img/top-03-sp.webp" />
+                    <source media="not (max-width: 1023px)" srcset="<?php echo get_template_directory_uri() ?>/img/top-03.webp" />
+                    <img loading="lazy" decoding="async" src="<?php echo get_template_directory_uri() ?>/img/top-03-sp.webp" alt="治療席画像（横）" width="335" height="447" />
+                  </picture>
+                </div>
+              </li>
+            </ul>
+            <div class="swiper-button-prev"></div>
+            <div class="swiper-button-next"></div>
+            <div class="swiper-pagination"></div>
+            <div class="mv__text--top dotted-underline">街の皆さまの笑顔を守る</div>
+            <div class="mv__text--bottom dotted-underline">アットホームな歯医者さん</div>
           </div>
-          <div class="practice-nav--item">
-            <a href="#general-practice" class="practice-nav__title">
-              <h2 class="practice-nav__title--text">特殊診療</h2>
-              <div class="practice-nav__title--label special--label">実費</div>
+          <div class="mv__time-schedule">
+            <img
+              loading="lazy"
+              decoding="async"
+              src="<?php echo get_template_directory_uri() ?>/img/time-schedule.webp"
+              alt="水曜日午後は休診日となります。土日祝日含め午前の診療時間は9:00〜12:00、午後の診療時間は13:00〜22:00となります。"
+              width="477"
+              height="166"
+            />
+          </div>
+        </div>
+        <div class="mv__news">
+          <div class="mv__news-header">
+            <div class="mv__news-header--text">
+              <div class="mv__news-header--text-main">お知らせ</div>
+              <div class="mv__news-header--text-sub">NEWS</div>
+            </div>
+            <a href="./blog.html"><div class="mv__news-header-past">過去のお知らせはこちら</div> </a>
+          </div>
+          <div class="mv__news-body">
+            <a href="./page-name.html" class="mv__news-body--text">
+              <time class="mv__news-body--text-data" datetime="2021-01-01"><span class="hidden-sp">2021.01.01</span><span class="hidden-pc">2021/01/01</span></time>
+              <p class="mv__news-body--text-title">年末年始の営業時間のお知らせ</p>
             </a>
-            <div class="practice-nav__menu">
-              <a href="#dentures" class="practice-nav__menu--item">入れ歯</a>
-              <a href="#orthodontics" class="practice-nav__menu--item">矯正歯科</a>
-              <a href="#teeth-whitening" class="practice-nav__menu--item">ホワイトニング</a>
-              <a href="#oral-surgery" class="practice-nav__menu--item">口腔外科</a>
-              <a href="#laser-treatment" class="practice-nav__menu--item">レーザー治療</a>
+            <div class="mv__news-body--arrow">
+              <svg width="16" height="16" viewBox="0 0 16 16" fill="none">
+                <path d="M1 8H15" stroke="#393939" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round" />
+                <path d="M8.39453 1L15.0001 8L8.39453 15" stroke="#393939" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round" />
+              </svg>
             </div>
           </div>
         </div>
       </div>
     </div>
 
-    <section class="general-practice medical wow fadeInUp" id="general-practice">
-      <div class="medical-u__body">
-        <div class="section__inner">
-          <h2 class="section__title">一般診療</h2>
-          <div class="medical-u__inner">
-            <div class="medical-u__items">
-              <article id="general-dental" class="medical-u__item">
-                <div class="medical-u__item--inner">
-                  <div class="medical-u__label">保険対象</div>
-                  <div class="medical-u__title">
-                    <h3 class="medical-u__title--main">一般歯科</h3>
-                    <div class="medical-u__title--sub">虫歯治療、歯茎がしみるなど</div>
-                  </div>
-                  <div class="medical-u__contents">
-                    <div class="medical-u__contents--texts">
-                      <div class="medical-u__contents--text">
-                        テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。
-                      </div>
-                      <div class="medical-u__contents--text">
-                        テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。
-                      </div>
-                    </div>
-                    <div class="medical-u__contents--img">
-                      <img loading="lazy" decoding="async" src="./img/medical_general1.webp" alt="きれいな歯の女性" width="420" height="315" />
-                    </div>
-                  </div>
-                </div>
-              </article>
-              <article id="children-dental" class="medical-u__item">
-                <div class="medical-u__item--inner">
-                  <div class="medical-u__label">保険対象</div>
-                  <div class="medical-u__title">
-                    <h3 class="medical-u__title--main">小児歯科</h3>
-                    <div class="medical-u__title--sub">小さいお子様の歯の治療</div>
-                  </div>
-                  <div class="medical-u__contents">
-                    <div class="medical-u__contents--texts">
-                      <div class="medical-u__contents--text">
-                        テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。
-                      </div>
-                      <div class="medical-u__contents--text">
-                        テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。
-                      </div>
-                    </div>
-                    <div class="medical-u__contents--img">
-                      <img loading="lazy" decoding="async" src="./img/medical_general2.webp" alt="子どもの歯磨き" width="420" height="315" />
-                    </div>
-                  </div>
-                </div>
-              </article>
-              <article id="preventive-dental" class="medical-u__item">
-                <div class="medical-u__item--inner">
-                  <div class="medical-u__label">保険対象</div>
-                  <div class="medical-u__title">
-                    <h3 class="medical-u__title--main">予防歯科</h3>
-                    <div class="medical-u__title--sub">口腔内のケア全般</div>
-                  </div>
-                  <div class="medical-u__contents">
-                    <div class="medical-u__contents--texts">
-                      <div class="medical-u__contents--text">
-                        テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。
-                      </div>
-                      <div class="medical-u__contents--text">
-                        テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。
-                      </div>
-                    </div>
-                    <div class="medical-u__contents--img">
-                      <img loading="lazy" decoding="async" src="./img/medical_general3.webp" alt="レントゲンを見ながら治療" width="420" height="315" />
-                    </div>
-                  </div>
-                </div>
-              </article>
+    <!-- concept -->
+    <section class="concept wow fadeInUp">
+      <!-- <div class="section__inner"> -->
+      <div class="concept__container">
+        <div class="concept__contents">
+          <h2 class="concept__title">CONCEPT</h2>
+          <div class="concept__message--main">健康的で素敵な笑顔あふれる<br />街づくりを目指して</div>
+          <div class="concept__message--sub">
+            私たちは最新の医療技術を追求すると共に、患者様とのコミュニケーションを大事することで、気軽に通いやすく些細なことでも相談できる「街の掛かり付け医」を目指しております。<br />
+            お子様からご高齢の方まで、快適な空間で治療が受けられる場を作り、地域医療に貢献しきたいと考えております。
+          </div>
+          <div class="cencept__button">
+            <a href="./about.html" class="button button--arrow-right">当院について</a>
+          </div>
+        </div>
+        <div class="concept__img">
+          <img loading="lazy" decoding="async" src="<?php echo get_template_directory_uri() ?>/img/concept-img.webp" alt="女医の丁寧な治療" width="668" height="460" />
+        </div>
+      </div>
+      <!-- </div> -->
+    </section>
+
+    <!-- recommend -->
+    <section class="recommend wow fadeInUp">
+      <div class="section__inner">
+        <h2 class="section__title">当院の3つのおすすめ</h2>
+        <div class="recommend__wrapper">
+          <div class="recommend__item">
+            <div class="recommend__label">
+              <img loading="lazy" decoding="async" src="<?php echo get_template_directory_uri() ?>/img/recommend-label-1.webp" alt="おすすめ01" width="177" height="33" />
+            </div>
+            <div class="recommend__img">
+              <img loading="lazy" decoding="async" src="<?php echo get_template_directory_uri() ?>/img/recommend-img-1.webp" alt="歯の画像" width="220" height="220" />
+            </div>
+            <div class="recommend__message">痛くない歯科医療の追求</div>
+            <div class="recommend__text">歯の治療において、小さな違和感は大きなストレスにつながります。 <br />私たちは常に快適な歯科医療技術の研究を行っております。</div>
+          </div>
+          <div class="recommend__item">
+            <div class="recommend__label"><img loading="lazy" decoding="async" src="<?php echo get_template_directory_uri() ?>/img/recommend-label-2.webp" alt="おすすめ02" width="182" height="33" /></div>
+            <div class="recommend__img"><img loading="lazy" decoding="async" src="<?php echo get_template_directory_uri() ?>/img/recommend-img-2.webp" alt="電車画像" width="220" height="220" /></div>
+            <div class="recommend__message">駅から徒歩3分</div>
+            <div class="recommend__text">「通いやすさ」も医院選びの重要なポイントと考え、2019年のリニューアルを期に更に駅の近くへ場所を移しました。</div>
+          </div>
+          <div class="recommend__item">
+            <div class="recommend__label"><img loading="lazy" decoding="async" src="<?php echo get_template_directory_uri() ?>/img/recommend-label-3.webp" alt="おすすめ03" width="182" height="33" /></div>
+            <div class="recommend__img"><img loading="lazy" decoding="async" src="<?php echo get_template_directory_uri() ?>/img/recommend-img-3.webp" alt="時計画像" width="220" height="220" /></div>
+            <div class="recommend__message">夜20:30まで営業</div>
+            <div class="recommend__text">
+              朝から夜までお仕事をされている方のために、診療時間を見直しました。<br />
+              <strong class="text-accent">※駆け込みでも対応可能ですが、事前にご連絡いただけるとスムーズです。</strong>
             </div>
           </div>
         </div>
       </div>
     </section>
 
-    <section class="special-practice medical wow fadeInUp" id="special-practice">
-      <div class="medical-u__body">
+    <!-- medical -->
+    <section class="medical wow fadeInUp">
+      <div class="medical__body">
         <div class="section__inner">
-          <h2 class="section__title">特殊診療</h2>
-          <div class="medical-u__inner">
-            <div class="medical-u__items">
-              <article id="dentures" class="medical-u__item">
-                <div class="medical-u__item--inner">
-                  <div class="medical-u__label">実費</div>
-                  <div class="medical-u__title">
-                    <h3 class="medical-u__title--main">入れ歯</h3>
-                    <div class="medical-u__title--sub">入れ歯を作りたい、調整したい</div>
-                  </div>
-                  <div class="medical-u__contents">
-                    <div class="medical-u__contents--texts">
-                      <div class="medical-u__contents--text">
-                        テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。
-                      </div>
-                      <div class="medical-u__contents--text">
-                        テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。
-                      </div>
-                    </div>
-                    <div class="medical-u__contents--img">
-                      <img loading="lazy" decoding="async" src="./img/medical_special1.webp" alt="きれいな入れ歯" width="420" height="316" />
-                    </div>
+          <h2 class="section__title medical__title">診療案内</h2>
+          <div class="medical__inner">
+            <div class="medical__wrapper">
+              <a href="./medical.html#general-practice" class="medical__item">
+                <div class="medical__img"><img loading="lazy" decoding="async" src="<?php echo get_template_directory_uri() ?>/img/medical-img-1.webp" alt="歯ブラシ" width="460" height="290" /></div>
+                <div class="medical__text">
+                  <h3 class="medical__text--title">一般診療</h3>
+                  <div class="medical__text--text">虫歯・入れ歯・小児歯科</div>
+                </div>
+              </a>
+              <a href="./medical.html#special-practice" class="medical__item">
+                <div class="medical__img"><img loading="lazy" decoding="async" src="<?php echo get_template_directory_uri() ?>/img/medical-img-2.webp" alt="歯茎" width="460" height="290" /></div>
+                <div class="medical__text">
+                  <h3 class="medical__text--title">特殊診療</h3>
+                  <div class="medical__text--text">
+                    インプラント・ホワイトニング<br />
+                    予防歯科・口腔外科・審美歯科
                   </div>
                 </div>
-              </article>
-              <article id="orthodontics" class="medical-u__item">
-                <div class="medical-u__item--inner">
-                  <div class="medical-u__label">実費</div>
-                  <div class="medical-u__title">
-                    <h3 class="medical-u__title--main">矯正歯科</h3>
-                    <div class="medical-u__title--sub">歯並びが気になる</div>
-                  </div>
-                  <div class="medical-u__contents">
-                    <div class="medical-u__contents--texts">
-                      <div class="medical-u__contents--text">
-                        テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。
-                      </div>
-                      <div class="medical-u__contents--text">
-                        テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。
-                      </div>
-                    </div>
-                    <div class="medical-u__contents--img">
-                      <img loading="lazy" decoding="async" src="./img/medical_special2.webp" alt="歯の矯正器具" width="420" height="315" />
-                    </div>
-                  </div>
-                </div>
-              </article>
-              <article id="teeth-whitening" class="medical-u__item">
-                <div class="medical-u__item--inner">
-                  <div class="medical-u__label">実費</div>
-                  <div class="medical-u__title">
-                    <h3 class="medical-u__title--main">ホワイトニング</h3>
-                    <div class="medical-u__title--sub">歯を白くしたい</div>
-                  </div>
-                  <div class="medical-u__contents">
-                    <div class="medical-u__contents--texts">
-                      <div class="medical-u__contents--text">
-                        テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。
-                      </div>
-                      <div class="medical-u__contents--text">
-                        テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。
-                      </div>
-                    </div>
-                    <div class="medical-u__contents--img">
-                      <img loading="lazy" decoding="async" src="./img/medical_special3.webp" alt="歯の白い女性" width="420" height="315" />
-                    </div>
-                  </div>
-                </div>
-              </article>
-              <article id="oral-surgery" class="medical-u__item">
-                <div class="medical-u__item--inner">
-                  <div class="medical-u__label">実費</div>
-                  <div class="medical-u__title">
-                    <h3 class="medical-u__title--main">口腔外科</h3>
-                    <div class="medical-u__title--sub">インプラント、親知らずの抜歯</div>
-                  </div>
-                  <div class="medical-u__contents">
-                    <div class="medical-u__contents--texts">
-                      <div class="medical-u__contents--text">
-                        テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。
-                      </div>
-                      <div class="medical-u__contents--text">
-                        テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。
-                      </div>
-                    </div>
-                    <div class="medical-u__contents--img">
-                      <img loading="lazy" decoding="async" src="./img/medical_special4.webp" alt="インプラントのイメージ図" width="420" height="315" />
-                    </div>
-                  </div>
-                </div>
-              </article>
-              <article id="laser-treatment" class="medical-u__item">
-                <div class="medical-u__item--inner">
-                  <div class="medical-u__label">実費</div>
-                  <div class="medical-u__title">
-                    <h3 class="medical-u__title--main">レーザー治療</h3>
-                    <div class="medical-u__title--sub">口内炎を治したい</div>
-                  </div>
-                  <div class="medical-u__contents">
-                    <div class="medical-u__contents--texts">
-                      <div class="medical-u__contents--text">
-                        テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。
-                      </div>
-                      <div class="medical-u__contents--text">
-                        テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。
-                      </div>
-                    </div>
-                    <div class="medical-u__contents--img">
-                      <img loading="lazy" decoding="async" src="./img/medical_special5.webp" alt="レーザー治療のイメージ図" width="420" height="315" />
-                    </div>
-                  </div>
-                </div>
-              </article>
+              </a>
+            </div>
+            <div class="medical__message">
+              当院では、患者さんの歯の健康状態や治療方針を丁寧にカウンセリングし、十分ご理解していただいた上で治療いたします。<br />
+              痛みに配慮することと、可能な限り削らない・抜かない治療に努めております。<br />
+              <strong class="text-accent">※特殊性の高い矯正治療などは保険の適応外となります。 これらの治療を行う際は事前に詳細と費用のご説明いたします。</strong>
             </div>
           </div>
         </div>
       </div>
     </section>
 
+    <!-- blog -->
+    <section class="blog wow fadeInUp">
+      <div class="section__inner">
+        <h2 class="section__title">スタッフブログ</h2>
+        <div class="blog__wrapper">
+          <ul class="blog__list">
+            <li class="blog__item is-new">
+              <a href="./page-name.html" class="blog__link">
+                <div class="blog__img">
+                  <picture>
+                    <source media="(max-width: 767px)" srcset="<?php echo get_template_directory_uri() ?>/img/blog-img-sp.webp" />
+                    <source media="not (max-width: 767px)" srcset="<?php echo get_template_directory_uri() ?>/img/blog-img.webp" />
+                    <img loading="lazy" decoding="async" src="<?php echo get_template_directory_uri() ?>/img/blog-img-sp.webp" alt="レントゲンを見て診察" width="335" height="447" />
+                  </picture>
+                </div>
+                <div class="blog__text is-other">
+                  <div class="blog__title">記事のタイトルが入ります。記事のタイトルが入ります。記事のタイトルが入ります。</div>
+                  <time class="blog__data" datetime="2020-02-14">2020.02.14</time>
+                </div>
+              </a>
+            </li>
+            <li class="blog__item is-new">
+              <a href="./page-name.html" class="blog__link is-new">
+                <div class="blog__img">
+                  <picture>
+                    <source media="(max-width: 767px)" srcset="<?php echo get_template_directory_uri() ?>/img/blog-img-sp.webp" />
+                    <source media="not (max-width: 767px)" srcset="<?php echo get_template_directory_uri() ?>/img/blog-img.webp" />
+                    <img loading="lazy" decoding="async" src="<?php echo get_template_directory_uri() ?>/img/blog-img-sp.webp" alt="レントゲンを見て診察" width="335" height="447" />
+                  </picture>
+                </div>
+                <div class="blog__text is-other">
+                  <div class="blog__title">記事のタイトルが入ります。記事のタイトルが入ります。記事のタイトルが入ります。</div>
+                  <time class="blog__data" datetime="2020-02-14">2020.02.14</time>
+                </div>
+              </a>
+            </li>
+            <li class="blog__item">
+              <a href="./page-name.html" class="blog__link is-new">
+                <div class="blog__img">
+                  <picture>
+                    <source media="(max-width: 767px)" srcset="<?php echo get_template_directory_uri() ?>/img/blog-img-sp.webp" />
+                    <source media="not (max-width: 767px)" srcset="<?php echo get_template_directory_uri() ?>/img/blog-img.webp" />
+                    <img loading="lazy" decoding="async" src="<?php echo get_template_directory_uri() ?>/img/blog-img-sp.webp" alt="レントゲンを見て診察" width="335" height="447" />
+                  </picture>
+                </div>
+                <div class="blog__text is-other">
+                  <div class="blog__title">記事のタイトルが入ります。記事のタイトルが入ります。記事のタイトルが入ります。</div>
+                  <time class="blog__data" datetime="2020-02-14">2020.02.14</time>
+                </div>
+              </a>
+            </li>
+            <li class="blog__item">
+              <a href="./page-name.html" class="blog__link is-new">
+                <div class="blog__img">
+                  <picture>
+                    <source media="(max-width: 767px)" srcset="<?php echo get_template_directory_uri() ?>/img/blog-img-sp.webp" />
+                    <source media="not (max-width: 767px)" srcset="<?php echo get_template_directory_uri() ?>/img/blog-img.webp" />
+                    <img loading="lazy" decoding="async" src="<?php echo get_template_directory_uri() ?>/img/blog-img-sp.webp" alt="レントゲンを見て診察" width="335" height="447" />
+                  </picture>
+                </div>
+                <div class="blog__text is-other">
+                  <div class="blog__title">記事のタイトルが入ります。記事のタイトルが入ります。記事のタイトルが入ります。</div>
+                  <time class="blog__data" datetime="2020-02-14">2020.02.14</time>
+                </div>
+              </a>
+            </li>
+            <li class="blog__item">
+              <a href="./page-name.html" class="blog__link is-new">
+                <div class="blog__img">
+                  <picture>
+                    <source media="(max-width: 767px)" srcset="<?php echo get_template_directory_uri() ?>/img/blog-img-sp.webp" />
+                    <source media="not (max-width: 767px)" srcset="<?php echo get_template_directory_uri() ?>/img/blog-img.webp" />
+                    <img loading="lazy" decoding="async" src="<?php echo get_template_directory_uri() ?>/img/blog-img-sp.webp" alt="レントゲンを見て診察" width="335" height="447" />
+                  </picture>
+                </div>
+                <div class="blog__text is-other">
+                  <div class="blog__title">記事のタイトルが入ります。記事のタイトルが入ります。記事のタイトルが入ります。</div>
+                  <time class="blog__data" datetime="2020-02-14">2020.02.14</time>
+                </div>
+              </a>
+            </li>
+            <li class="blog__item">
+              <a href="./page-name.html" class="blog__link is-new">
+                <div class="blog__img">
+                  <picture>
+                    <source media="(max-width: 767px)" srcset="<?php echo get_template_directory_uri() ?>/img/blog-img-sp.webp" />
+                    <source media="not (max-width: 767px)" srcset="<?php echo get_template_directory_uri() ?>/img/blog-img.webp" />
+                    <img loading="lazy" decoding="async" src="<?php echo get_template_directory_uri() ?>/img/blog-img-sp.webp" alt="レントゲンを見て診察" width="335" height="447" />
+                  </picture>
+                </div>
+                <div class="blog__text is-other">
+                  <div class="blog__title">記事のタイトルが入ります。記事のタイトルが入ります。記事のタイトルが入ります。</div>
+                  <time class="blog__data" datetime="2020-02-14">2020.02.14</time>
+                </div>
+              </a>
+            </li>
+          </ul>
+          <div class="blog__button">
+            <a href="./blog.html" class="button button--arrow-right">スタッフブログ一覧はこちら</a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- footer -->
     <footer class="footer">
       <div class="footer__inner">
         <div class="footer__contents">
           <div class="footer__info">
             <div class="footer__logo">
               <a href="./index.php">
-                <img loading="lazy" decoding="async" src="./img/logo.webp" alt="みなみ歯科クリニック" width="808" height="82" />
+                <img loading="lazy" decoding="async" src="<?php echo get_template_directory_uri() ?>/img/logo.webp" alt="みなみ歯科クリニック" width="808" height="82" />
               </a>
             </div>
             <div class="footer__info--address">
@@ -467,7 +491,7 @@
               <span class="footer__info--address-text">東京都杉並区阿佐谷北7-3-1</span>
             </div>
             <div class="footer__info--tel">
-              <a href="tel:03-1234-5678" class="footer__info--tel-number">03-1234-5678</a>
+              <div class="footer__info--tel-number">03-1234-5678</div>
               <div class="footer__info--tel-text">(年中無休 AM9:00〜PM22:00)</div>
             </div>
             <div class="footer__buttons">
@@ -517,7 +541,7 @@
               <img
                 loading="lazy"
                 decoding="async"
-                src="./img/time-schedule.webp"
+                src="<?php echo get_template_directory_uri() ?>/img/time-schedule.webp"
                 alt="水曜日午後は休診日となります。土日祝日含め午前の診療時間は9:00〜12:00、午後の診療時間は13:00〜22:00となります。"
                 width="477"
                 height="166"
@@ -542,14 +566,14 @@
         <div class="footer__links">
           <div class="footer__link--container">
             <div class="footer__link--head">
-              <a href="./index.php"><div class="footer__link--item">TOP</div></a>
+              <a href="#"><div class="footer__link--item">TOP</div></a>
             </div>
           </div>
           <div class="footer__link--container">
             <div class="footer__link--head">当院について</div>
             <div class="footer__link--body">
               <div class="footer__link--items">
-                <a href="./about.html"><div class="footer__link--item footer__link--item-sub">ポリシーと特徴</div></a>
+                <a href="./about.html#policy-feature"><div class="footer__link--item footer__link--item-sub">ポリシーと特徴</div></a>
                 <a href="./about.html#inside"><div class="footer__link--item footer__link--item-sub">当院の様子</div></a>
               </div>
             </div>
@@ -592,12 +616,12 @@
           </div>
         </div>
       </div>
-
       <small class="footer__copy">&copy;2020-2021 みなみ歯科クリニック</small>
 
+      <!-- footer nav -->
       <div class="footer__nav">
         <div class="footer__info--tel">
-          <a href="tel:03-1234-5678" class="footer__info--tel-number footer__nav-info--tel-number">03-1234-5678</a>
+          <div class="footer__info--tel-number footer__nav-info--tel-number">03-1234-5678</div>
           <div class="footer__info--tel-text footer__nav-info--tel-text">(年中無休 AM9:00〜PM22:00)</div>
         </div>
 
@@ -622,9 +646,10 @@
         </a>
       </div>
 
+      <!-- totop -->
       <div class="footer__pagetop">
         <a href="#" aria-label="Go to top">
-          <img loading="lazy" decoding="async" src="./img/totop.webp" alt="topへ戻るボタン" width="56" height="56" />
+          <img loading="lazy" decoding="async" src="<?php echo get_template_directory_uri() ?>/img/totop.webp" alt="topへ戻るボタン" width="56" height="56" />
         </a>
       </div>
     </footer>
