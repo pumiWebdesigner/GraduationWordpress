@@ -15,24 +15,10 @@
         // 遷移する先とheaderの高さからスクロールする距離を計算
         scrollDistance = calcDistance(hash);
       }
-      console.log(scrollDistance);
       // スムーズスクロール
       smoothScroll(scrollDistance, 300);
     }
   });
-
-  // a[href*="#"]：href属性に#が含まれるもの
-  // ページ内のindex.html#〜も対象にしようとしたが、pathの正規か判定が難しいので断念
-  // var hashIndex = href.indexOf("#"); // # の位置を取得 (# が存在しない場合は -1 を返す)
-  // hrefのpath（＃前の文字列）を取得する
-  // var thisPath = href.substring(0, hashIndex);
-  // 現在のページのpathを取得する
-  // var locationPath = window.location.pathname;
-  // var locationPath = window.location.origin + window.location.pathname;
-  // ページ内リンクの場合のみを対象とする
-  // if (thisPath === locationPath || thisPath === "") {
-  // }
-  // ページ外への遷移は別途記載
 
   // ページ内の遷移
   // a[href^="#"]：href属性が#から始まるもの

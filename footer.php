@@ -4,7 +4,7 @@
         <div class="footer__contents">
           <div class="footer__info">
             <div class="footer__logo">
-              <a href="./index.php">
+              <a href="<?php echo esc_url(home_url('/')); ?>/index.php">
                 <img loading="lazy" decoding="async" src="<?php echo get_template_directory_uri() ?>/img/logo.webp" alt="みなみ歯科クリニック" width="808" height="82" />
               </a>
             </div>
@@ -13,11 +13,11 @@
               <span class="footer__info--address-text">東京都杉並区阿佐谷北7-3-1</span>
             </div>
             <div class="footer__info--tel">
-              <div class="footer__info--tel-number">03-1234-5678</div>
+              <a href="tel:03-1234-5678" class="footer__info--tel-number">03-1234-5678</a>
               <div class="footer__info--tel-text">(年中無休 AM9:00〜PM22:00)</div>
             </div>
             <div class="footer__buttons">
-              <a href="./reservation.html">
+              <a href="<?php echo esc_url(home_url('/')); ?>/reservation/">
                 <div class="button button--color-reverse button--reservation">
                   <div class="button--label">
                     <div class="button--icon">
@@ -38,7 +38,7 @@
                   </div>
                 </div>
               </a>
-              <a href="./contact.html">
+              <a href="<?php echo esc_url(home_url('/')); ?>/contact/">
                 <div class="button button--contact">
                   <div class="button--label">
                     <div class="button--icon">
@@ -88,15 +88,15 @@
         <div class="footer__links">
           <div class="footer__link--container">
             <div class="footer__link--head">
-              <a href="#"><div class="footer__link--item">TOP</div></a>
+              <a href="<?php echo esc_url(home_url('/')); ?>"><div class="footer__link--item">TOP</div></a>
             </div>
           </div>
           <div class="footer__link--container">
             <div class="footer__link--head">当院について</div>
             <div class="footer__link--body">
               <div class="footer__link--items">
-                <a href="./about.html#policy-feature"><div class="footer__link--item footer__link--item-sub">ポリシーと特徴</div></a>
-                <a href="./about.html#inside"><div class="footer__link--item footer__link--item-sub">当院の様子</div></a>
+                <a href="<?php echo esc_url(home_url('/')); ?>/about/#policy-feature"><div class="footer__link--item footer__link--item-sub">ポリシーと特徴</div></a>
+                <a href="<?php echo esc_url(home_url('/')); ?>/about/#inside"><div class="footer__link--item footer__link--item-sub">当院の様子</div></a>
               </div>
             </div>
           </div>
@@ -104,9 +104,9 @@
             <div class="footer__link--head">スタッフ紹介</div>
             <div class="footer__link--body">
               <div class="footer__link--items">
-                <a href="./staff.html#greeting"><div class="footer__link--item footer__link--item-sub">院長のあいさつ</div></a>
-                <a href="./staff.html#introduction"><div class="footer__link--item footer__link--item-sub">スタッフ</div></a>
-                <a href="./blog.html"><div class="footer__link--item footer__link--item-sub">スタッフブログ</div></a>
+                <a href="<?php echo esc_url(home_url('/')); ?>/staff/#greeting"><div class="footer__link--item footer__link--item-sub">院長のあいさつ</div></a>
+                <a href="<?php echo esc_url(home_url('/')); ?>/staff/#introduction"><div class="footer__link--item footer__link--item-sub">スタッフ</div></a>
+                <a href="<?php echo esc_url(home_url('/')); ?>/blog/"><div class="footer__link--item footer__link--item-sub">スタッフブログ</div></a>
               </div>
             </div>
           </div>
@@ -114,16 +114,16 @@
             <div class="footer__link--head">診療内容</div>
             <div class="footer__link--body">
               <div class="footer__link--items">
-                <a href="./medical.html#general-dental"><div class="footer__link--item footer__link--item-sub">一般歯科</div></a>
-                <a href="./medical.html#children-dental"><div class="footer__link--item footer__link--item-sub">小児歯科</div></a>
-                <a href="./medical.html#preventive-dental"><div class="footer__link--item footer__link--item-sub">予防歯科</div></a>
-                <a href="./medical.html#dentures"><div class="footer__link--item footer__link--item-sub">入れ歯</div></a>
+                <a href="<?php echo esc_url(home_url('/')); ?>/medical/#general-dental"><div class="footer__link--item footer__link--item-sub">一般歯科</div></a>
+                <a href="<?php echo esc_url(home_url('/')); ?>/medical/#children-dental"><div class="footer__link--item footer__link--item-sub">小児歯科</div></a>
+                <a href="<?php echo esc_url(home_url('/')); ?>/medical/#preventive-dental"><div class="footer__link--item footer__link--item-sub">予防歯科</div></a>
+                <a href="<?php echo esc_url(home_url('/')); ?>/medical/#dentures"><div class="footer__link--item footer__link--item-sub">入れ歯</div></a>
               </div>
               <div class="footer__link--items">
-                <a href="./medical.html#orthodontics"><div class="footer__link--item footer__link--item-sub">矯正歯科</div></a>
-                <a href="./medical.html#teeth-whitening"><div class="footer__link--item footer__link--item-sub">ホワイトニング</div></a>
-                <a href="./medical.html#oral-surgery"><div class="footer__link--item footer__link--item-sub">口腔外科</div></a>
-                <a href="./medical.html#laser-treatment"><div class="footer__link--item footer__link--item-sub">レーザー治療</div></a>
+                <a href="<?php echo esc_url(home_url('/')); ?>/medical/#orthodontics"><div class="footer__link--item footer__link--item-sub">矯正歯科</div></a>
+                <a href="<?php echo esc_url(home_url('/')); ?>/medical/#teeth-whitening"><div class="footer__link--item footer__link--item-sub">ホワイトニング</div></a>
+                <a href="<?php echo esc_url(home_url('/')); ?>/medical/#oral-surgery"><div class="footer__link--item footer__link--item-sub">口腔外科</div></a>
+                <a href="<?php echo esc_url(home_url('/')); ?>/medical/#laser-treatment"><div class="footer__link--item footer__link--item-sub">レーザー治療</div></a>
               </div>
             </div>
           </div>
@@ -131,8 +131,8 @@
             <div class="footer__link--head">お問い合わせ</div>
             <div class="footer__link--body">
               <div class="footer__link--items">
-                <a href="./contact.html"><div class="footer__link--item footer__link--item-sub">お問い合わせフォーム</div></a>
-                <a href="./reservation.html"><div class="footer__link--item footer__link--item-sub">WEB予約</div></a>
+                <a href="<?php echo esc_url(home_url('/')); ?>contact/"><div class="footer__link--item footer__link--item-sub">お問い合わせフォーム</div></a>
+                <a href="<?php echo esc_url(home_url('/')); ?>reservation/"><div class="footer__link--item footer__link--item-sub">WEB予約</div></a>
               </div>
             </div>
           </div>
@@ -143,11 +143,11 @@
       <!-- footer nav -->
       <div class="footer__nav">
         <div class="footer__info--tel">
-          <div class="footer__info--tel-number footer__nav-info--tel-number">03-1234-5678</div>
+          <a href="tel:03-1234-5678" class="footer__info--tel-number footer__nav-info--tel-number">03-1234-5678</a>
           <div class="footer__info--tel-text footer__nav-info--tel-text">(年中無休 AM9:00〜PM22:00)</div>
         </div>
 
-        <a href="./reservation.html" class="button--reservation button button--color-reverse">
+        <a href="<?php echo esc_url(home_url('/')); ?>reservation/" class="button--reservation button button--color-reverse">
           <div class="button--label">
             <div class="button--icon">
               <svg width="46" height="28" viewBox="0 0 46 28" fill="none">

@@ -6,75 +6,37 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <!-- nodndexの記載 -->
     <meta name="robots" content="noindex" />
-    <!-- twitterｶｰﾄﾞ,OGP -->
-    <meta name="twitter:card" content="summary_large_image" />
-    <meta name="twitter:site" content="@pumiWebcoder" />
-    <meta property="og:url" content="http://pumiwebcoder.xsrv.jp/" />
-    <meta property="og:title" content="みなみ歯科クリニック" />
-    <meta property="og:description" content="みなみ歯科クリニックです。街の皆さまの笑顔を守るアットホームな歯医者さんです。" />
-    <meta property="og:image" content="<?php echo get_template_directory_uri() ?>/img/favicon.webp" />
-    <link rel="icon" href="<?php echo get_template_directory_uri() ?>/img/favicon.webp" type="image/png" />
-    <!-- GoogleFonts -->
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link href="https://fonts.googleapis.com/css2?family=M+PLUS+Rounded+1c:wght@500;700&display=swap" rel="stylesheet" />
     <?php wp_head(); ?>
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-QKGNPT22W4"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'G-QKGNPT22W4');
+    </script>
   </head>
 
   <body>
     <!-- header -->
     <header class="header">
       <div class="header__inner">
-        <h1 class="header__logo">
-          <a href="./index.php">
-            <img loading="lazy" decoding="async" src="<?php echo get_template_directory_uri() ?>/img/logo.webp" alt="みなみ歯科クリニック" width="808" height="82" />
-          </a>
-        </h1>
+        <?php if (is_front_page()) : //トップページではロゴをh1に、それ以外のページではdivに。 ?>
+          <h1 class="header__logo"><a href="<?php echo home_url('/'); ?>"><img loading="lazy" decoding="async" src="<?php echo get_template_directory_uri() ?>/img/logo.webp" alt="みなみ歯科クリニック" width="808" height="82" /></a></h1>
+        <?php else : ?>
+          <div class="header__logo"><a href="<?php echo home_url('/'); ?>"><img loading="lazy" decoding="async" src="<?php echo get_template_directory_uri() ?>/img/logo.webp" alt="みなみ歯科クリニック" width="808" height="82" /></a></div>
+        <?php endif; ?>
         <div class="header__nav--contents">
           <button id="js-drawer__btn" class="header__hamburger--button" aria-label="ハンバーガーメニュー">
             <span class="drawer-bar"></span>
             <span class="drawer-bar"></span>
             <span class="drawer-bar"></span>
           </button>
-          <nav class="header__nav">
-            <?php
-              wp_nav_menu(
-                array(
-                  'depth' => 1,
-                  'theme_location' => 'global',
-                  'container' => '',
-                  'menu_class' => 'header__nav--list'
-                )
-              );
-            ?>
-          </nav>
-          <nav class="drawer__nav">
-            <?php
-              wp_nav_menu(
-                array(
-                  'depth' => 1,
-                  'theme_location' => 'drawer', // ドロワーメニューをここに表示すると指定
-                  'container' => '',
-                  'menu_class' => 'drawer__nav--list'
-                )
-              );
-            ?>
-          </nav>
-          <div class="header__access">
-            <div class="header__access--address">〒166-0001 東京都杉並区阿佐谷北7-3-1</div>
-            <div class="header__access--tel">
-              <div class="header__access--tel-number">03-1234-5678</div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </header>
-
-    <div class="test" style="display:none;">
-<ul class="header__nav--list drawer__nav--list">
+          <nav class="header__nav drawer__nav">
+            <ul class="header__nav--list drawer__nav--list">
               <!-- home -->
-              <li class="header__nav--item drawer__nav--item is-active">
-                <a href="./index.php" class="header__nav--link drawer__nav--link js-drawer__nav--link">
+              <li class="header__nav--item drawer__nav--item<?php if(is_front_page()) echo ' is-active';?>">
+                <a href="<?php echo esc_url(home_url('/')); ?>" class="header__nav--link drawer__nav--link js-drawer__nav--link">
                   <div class="header__nav--icon drawer__nav--icon">
                     <svg width="19" height="20" viewBox="0 0 19 20" fill="none">
                       <path
@@ -89,8 +51,10 @@
                 </a>
               </li>
               <!-- about -->
-              <li class="header__nav--item drawer__nav--item">
-                <a href="./about.html" class="header__nav--link drawer__nav--link js-drawer__nav--link">
+              <li class="header__nav--item drawer__nav--item<?php if(is_page('about')) echo ' is-active';?>">
+              <!-- <a href="<?php echo esc_url(home_url('/about/')); ?>" class="header__nav--link drawer__nav--link js-drawer__nav--link"> -->
+
+                <a href="<?php echo esc_url(home_url('/')); ?>about/" class="header__nav--link drawer__nav--link js-drawer__nav--link">
                   <div class="header__nav--icon drawer__nav--icon">
                     <svg width="24" height="24" viewBox="0 0 24 24" fill="none">
                       <path
@@ -105,8 +69,8 @@
                 </a>
               </li>
               <!-- medical -->
-              <li class="header__nav--item drawer__nav--item">
-                <a href="./medical.html" class="header__nav--link drawer__nav--link js-drawer__nav--link">
+              <li class="header__nav--item drawer__nav--item<?php if(is_page('medical')) echo ' is-active';?>">
+                <a href="<?php echo esc_url(home_url('/')); ?>medical/" class="header__nav--link drawer__nav--link js-drawer__nav--link">
                   <div class="header__nav--icon drawer__nav--icon">
                     <svg width="24" height="24" viewBox="0 0 24 24" fill="none">
                       <path
@@ -131,8 +95,8 @@
                 </a>
               </li>
               <!-- staff -->
-              <li class="header__nav--item drawer__nav--item">
-                <a href="./staff.html" class="header__nav--link drawer__nav--link js-drawer__nav--link">
+              <li class="header__nav--item drawer__nav--item<?php if(is_page('staff')) echo ' is-active';?>">
+                <a href="<?php echo esc_url(home_url('/')); ?>staff/" class="header__nav--link drawer__nav--link js-drawer__nav--link">
                   <div class="header__nav--icon drawer__nav--icon">
                     <svg width="24" height="24" viewBox="0 0 24 24" fill="none">
                       <path
@@ -158,8 +122,8 @@
                 </a>
               </li>
               <!-- blog -->
-              <li class="header__nav--item drawer__nav--item">
-                <a href="./blog.html" class="header__nav--link drawer__nav--link js-drawer__nav--link">
+              <li class="header__nav--item drawer__nav--item<?php if(is_page('blog')) echo ' is-active';?>">
+                <a href="<?php echo esc_url(home_url('/')); ?>blog/" class="header__nav--link drawer__nav--link js-drawer__nav--link">
                   <div class="header__nav--icon drawer__nav--icon">
                     <svg width="24" height="24" viewBox="0 0 24 24" fill="none">
                       <path
@@ -174,8 +138,8 @@
                 </a>
               </li>
               <!-- contact -->
-              <li class="header__nav--item drawer__nav--item">
-                <a href="./contact.html" class="header__nav--link drawer__nav--link js-drawer__nav--link">
+              <li class="header__nav--item drawer__nav--item<?php if(is_page('contact')) echo ' is-active';?>">
+                <a href="<?php echo esc_url(home_url('/')); ?>contact/" class="header__nav--link drawer__nav--link js-drawer__nav--link">
                   <div class="header__nav--icon drawer__nav--icon">
                     <svg width="24" height="24" viewBox="0 0 24 24" fill="none">
                       <path
@@ -189,5 +153,130 @@
                   <div class="drawer__nav--arrow-right"></div>
                 </a>
               </li>
-</ul>
+            </ul>
+          </nav>
+          <div class="header__access">
+            <div class="header__access--address">〒166-0001 東京都杉並区阿佐谷北7-3-1</div>
+            <div class="header__access--tel">
+              <a href="tel:03-1234-5678" class="header__access--tel-number">03-1234-5678</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </header>
+
+    <?php if (!is_front_page()) : ?>
+      <div class="page-title">
+        <?php 
+        if(is_single() || is_category()){
+        ?>
+          <div class="page-title__img">
+            <img src="<?php echo get_template_directory_uri();?>/img/archive_top.webp" alt="診察室風景" width="600" height="376" loading="lazy" decoding="async" />
+          </div>
+          <div class="page-title__text">
+            <?php  
+            if(get_post_type() === 'post'){
+              if(has_category('営業について') || has_category('コラム') ){
+                // text--mainはカテゴリ名そのまま
+                if(has_category('営業について')){
+                  echo '<div class="page-title__text--main">営業について</div>';
+                  echo '<div class="page-title__text--sub">NEWS</div>';
+                }
+                else if(has_category('コラム') ) {
+                  echo '<div class="page-title__text--main">コラム</div>';
+                  echo '<div class="page-title__text--sub">COLUMN</div>';
+                }
+                else {
+                  echo '<div class="page-title__text--main">その他</div>';
+                  echo '<div class="page-title__text--sub">other</div>';
+                }
+              }
+            }
+      
+            elseif(get_post_type() === 'blog'){
+              $news_page = get_page_by_path('blog');
+              echo '<div class="page-title__text--main">'
+              . get_the_title($news_page->ID)
+              . '</div>';
+              echo '<div class="page-title__text--sub">'
+              . apply_filters('the_content', $news_page->post_content)
+              . '</div>';
+            }
+            else{
+              echo '<div class="page-title__text--main">その他</div>';
+              echo '<div class="page-title__text--sub">other</div>';
+            }
+          }
+        else if(is_home()|| is_archive() ){
+        ?>
+          <div class="page-title__img">
+            <img src="<?php echo get_template_directory_uri();?>/img/archive_top.webp" alt="診察室風景" width="600" height="376" loading="lazy" decoding="async" />
+          </div>
+          <div class="page-title__text">
+          <?php  
+          if(is_home())
+            $pagepath = get_page_by_path('news');
+          elseif(is_archive())
+            $pagepath = get_page_by_path('blog');
+
+          echo '<div class="page-title__text--main">'
+          . get_the_title($pagepath->ID)
+          . '</div>';
+          echo '<div class="page-title__text--sub">'
+          . apply_filters('the_content', $pagepath->post_content)
+          . '</div>';
+        }
+        else if(is_404()){
+        ?>
+        <div class="page-title__img">
+          <?php my_the_post_thumbnail(); ?>
+        </div>
+        <div class="page-title__text">
+        <?php
+              echo '<div class="page-title__text--main">404</div>';
+              echo '<div class="page-title__text--sub">NOT FOUND</div>';
+        }
+        else{
+        ?>
+          <div class="page-title__img">
+            <?php my_the_post_thumbnail(); ?>
+          </div>
+          <div class="page-title__text">
+          <?php
+          echo '<div class="page-title__text--main">'
+          . get_the_title()
+          . '</div>';
+          echo '<div class="page-title__text--sub">'
+          . get_the_content()
+          . '</div>';
+        }
+        ?>
+      </div>
     </div>
+
+      <?php if (function_exists('bcn_display')) : ?>
+        <div class="bread-crumb">
+          <?php bcn_display(); // BreadcrumbNavXTのパンくずを表示するための記述 ?>
+        </div>
+      <?php endif; ?>
+    <?php endif; ?>
+
+    <!-- 画面横のWEB予約ボタン -->
+    <a href="<?php echo esc_url(home_url('/')); ?>reservation/" class="aside__button">
+      <div class="aside__button--label">
+        <div class="button--icon">
+          <svg width="52" height="32" viewBox="0 0 52 32" fill="none">
+            <path
+              d="M47.79 7.55811H38.1414C36.9999 7.55811 36.0739 8.4842 36.0739 9.62566V27.5444C36.0739 28.6859 36.9999 29.612 38.1414 29.612H47.79C48.9315 29.612 49.8576 28.6859 49.8576 27.5444V9.62566C49.8576 8.4842 48.9315 7.55811 47.79 7.55811ZM42.9657 28.2336C42.2033 28.2336 41.5873 27.6176 41.5873 26.8552C41.5873 26.0928 42.2033 25.4769 42.9657 25.4769C43.7281 25.4769 44.3441 26.0928 44.3441 26.8552C44.3441 27.6176 43.7281 28.2336 42.9657 28.2336ZM47.79 23.5816C47.79 23.8659 47.5574 24.0985 47.2731 24.0985H38.6583C38.374 24.0985 38.1414 23.8659 38.1414 23.5816V10.1425C38.1414 9.85825 38.374 9.62566 38.6583 9.62566H47.2731C47.5574 9.62566 47.79 9.85825 47.79 10.1425V23.5816Z"
+              fill="white"
+            />
+            <path
+              d="M30.5069 0.999512H3.68256C2.20163 0.999512 1.00012 2.20102 1.00012 3.68194V21.5648C1.00012 23.0457 2.20163 24.2472 3.68256 24.2472H14.4123L13.5181 26.9296H9.49449C8.75124 26.9296 8.15328 27.5276 8.15328 28.2709C8.15328 29.0141 8.75124 29.6121 9.49449 29.6121H24.695C25.4382 29.6121 26.0362 29.0141 26.0362 28.2709C26.0362 27.5276 25.4382 26.9296 24.695 26.9296H20.6713L19.7772 24.2472H30.5069C31.9878 24.2472 33.1893 23.0457 33.1893 21.5648V3.68194C33.1893 2.20102 31.9878 0.999512 30.5069 0.999512ZM29.6127 20.6706H4.5767V4.57608H29.6127V20.6706Z"
+              fill="white"
+            />
+          </svg>
+        </div>
+        <div class="button--text">WEB予約<br /><span>はこちら</span></div>
+      </div>
+    </a>
+
